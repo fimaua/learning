@@ -1,0 +1,168 @@
+.order {
+    padding: 50px 15px;
+    background-color: $color-light;
+
+    @include for-large-up {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 73px 0;
+    }
+
+    &__illustration {
+        @include for-large-up {
+            margin-right: 121px;
+        }
+    }
+
+    &__details {
+        @include for-large-up {
+            max-width: 555px;
+        }
+    }
+
+    &__title {
+        margin: 0;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 40px;
+        letter-spacing: -0.357143px;
+        margin-top: 40px;
+
+        @include for-large-up {
+            letter-spacing: -0.5px;
+        }
+    }
+
+    &__text  {
+        font-size: 24px;
+        line-height: 34px;
+        margin: 0;
+        margin-top: 18px;
+                
+        @include for-large-up {
+            margin-top: 18px;
+        }
+    }
+
+    &__form {
+        @include for-large-up {
+            display: flex;
+            margin-top: 26px;
+        }
+    }
+
+    &__email {
+        font-size: 18px;
+        line-height: 13px;
+        margin-top: 40px;
+        width: 100%;
+        height: 48px;
+        border-radius: 2px;
+        border: 1px solid $border-color;
+        text-align: center;
+
+        @include for-large-up {
+            margin-top: 0;
+        }
+
+        &::placeholder {
+            color: $text-color-dark;
+        }
+    }
+
+    &__button {
+        margin-top: 12px;
+        width: 100%;
+        
+        @include for-large-up {
+            width: 160px;
+            margin-top: 0;
+            margin-left: 10px;
+            flex-shrink: 0;
+        }
+    }
+
+    &__terms {
+        margin-top: 10px;
+        font-size: 14px;
+        line-height: 22px;
+        color: $text-color-light-grey;
+    }
+
+    &__terms-link {
+        color: $text-color-blue;
+    }
+}
+
+.vacancy {
+    border-radius: 8px;
+    border: 1px solid $border-color;
+    display: flex;
+    text-decoration: none;
+    display: flex;
+    color: $text-color-dark;
+    overflow: hidden;
+
+    &:hover {
+        background-color: $color-dark-blue;
+
+        .vacancy__title {
+            color: $text-color-white;
+        }
+
+        .vacancy__location {
+            color: $text-color-white;
+        }
+
+        .vacancy__arrow-container {
+            background-color: transparent;
+        }
+
+        .icon-arrow_right {
+            background-image: url('img/icon-arrow-right-white.png');
+        }
+    }
+
+    &__details {
+        padding: 20px;
+        flex: 1;
+
+        @include for-large-up {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 28px;
+    }
+
+    &__location {
+        font-size: 16px;
+        line-height: 22px;
+        color: $text-color-light-grey;
+        margin-top: 7px;
+
+        @include for-large-up {
+            max-width: 232px;
+            flex: 1;
+            margin-left: auto;
+            margin-top: 0;
+        }
+    }
+
+    &__arrow-container {
+        background-color: $color-grey;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+
+        @include for-large-up {
+            background-color: $color-white;
+        }
+    }
+}
