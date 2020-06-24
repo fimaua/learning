@@ -1,5 +1,6 @@
 import React from "react";
 import Avatar from "./Avatar.jsx"
+import "./UserInfo.scss";
 
 function UserInfo(props) {
     return (
