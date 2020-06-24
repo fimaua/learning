@@ -1,5 +1,5 @@
 import React from "react";
-import "./Avatar.scss";
+import "./avatar.scss";
 
 function Avatar(props) {
     return (
