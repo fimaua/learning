@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Comment from './Comment.jsx'
-import './styles.css'
+import './index.scss'
 
 const rootElem = document.querySelector('#root')
 
