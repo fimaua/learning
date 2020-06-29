@@ -16,8 +16,4 @@ class GoodButton extends React.Component {
     }
 }
 
-const GoodButton = () => {
-
-}
-
 export default GoodButton;
