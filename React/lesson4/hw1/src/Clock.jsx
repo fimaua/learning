@@ -14,11 +14,11 @@ class Counter extends Component {
         this.state = {
             location: props.location,
             offset: props.offset,
-            date: new Date()
+            time: getTimeWithOffset(props.offset)
         }
         setInterval(() => {
             this.setState({
-                date: getTimeWithOffset(this.state.offset)
+                time: getTimeWithOffset(this.state.offset)
             })
         }, 1000)
     }
@@ -30,7 +30,7 @@ class Counter extends Component {
                     {this.state.location}
                 </div>
                 <div className="clock__time">
-                    {this.state.date.toLocaleTimeString()}
+                    {this.state.time.toLocaleTimeString()}
                 </div>
             </div>
         );
