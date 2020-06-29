@@ -1,6 +1,7 @@
 import React from "react";
 
 class Toggler extends React.Component {
+
     handleClick(e) {
         if (e.target.textContent !== 'On') {
             e.target.textContent = 'On'
@@ -8,6 +9,7 @@ class Toggler extends React.Component {
             e.target.textContent = 'Off'
         }
     }
+
     render() {
         return (
             <button
