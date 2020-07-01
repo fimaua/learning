@@ -28,15 +28,8 @@ class Auth extends Component {
     }
     logout = () => {
         this.setState({
-            isProcessing: true
+            isLoggedIn: false
         })
-
-        setTimeout(() => {
-            this.setState({
-                isProcessing: false,
-                isLoggedIn: false
-            })
-        }, 2000)
     }
 
     render() {
