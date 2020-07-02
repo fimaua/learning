@@ -7,4 +7,4 @@ import './index.scss'
 const rootElem = document.querySelector('#root')
 
 ReactDOM.render(
-    <Status />, rootElem)
+    <Status isOnline={true} />, rootElem)
