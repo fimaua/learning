@@ -21,16 +21,20 @@ class UsersList extends Component {
     }
 
     render() {
-        const usersList = this.props.users
+        const { users } = this.props
+        const { currentPage, itemsPerPage } = this.state
+        const start = currentPage * itemsPerPage
+        const end = start + itemsPerPage
+        const usersOnPage = users.slice(start, end)
 
         return (
             <div>
                 <Pagination
                     {...this.state}
-                    totalItems={usersList.length}
+                    totalItems={users.length}
                     {...this} />
                 <ul className='users'>
-                    {usersList.map(user => (
+                    {usersOnPage.map(user => (
                         <User key={user.id} {...user} />
                     ))}
                 </ul>
