@@ -31,7 +31,7 @@ class UsersList extends Component {
             <div>
                 <Pagination
                     {...this.state}
-                    totalItems={users.length}
+                    totalItems={usersOnPage.length}
                     {...this} />
                 <ul className='users'>
                     {usersOnPage.map(user => (

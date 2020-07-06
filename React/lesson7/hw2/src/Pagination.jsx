@@ -6,7 +6,7 @@ const Pagination = ({ goPrev, goNext, currentPage, itemsPerPage, totalItems }) =
         ? false
         : true
 
-    const isNextPageAvailable = totalItems === itemsPerPage
+    const isNextPageAvailable = totalItems >= itemsPerPage
         ? false
         : true
     return (
