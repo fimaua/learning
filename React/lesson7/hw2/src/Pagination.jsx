@@ -5,10 +5,10 @@ const Pagination = ({ goPrev, goNext, currentPage, itemsPerPage, totalItems }) =
     const isPrevPageAvailable = currentPage !== 0
         ? false
         : true
-
-    const isNextPageAvailable = totalItems >= itemsPerPage
-        ? false
-        : true
+    console.log(totalItems)
+    const isNextPageAvailable = totalItems < itemsPerPage
+        ? true
+        : false
     return (
         <div className="pagination">
             <button className="btn"
