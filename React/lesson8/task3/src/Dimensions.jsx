@@ -2,8 +2,8 @@ import React, { Component } from "react";
 
 class Dimensions extends Component {
     state = {
-        width: null,
-        height: null,
+        width: window.innerWidth,
+        height: window.innerHeight,
     }
 
     componentDidMount() {
@@ -18,7 +18,7 @@ class Dimensions extends Component {
             width: window.innerWidth,
             height: window.innerHeight,
         });
-        document.title = `${innerWidth} x ${innerHeight}`
+        document.title = `${this.state.width} x ${this.state.height}`
     }
 
     render() {
