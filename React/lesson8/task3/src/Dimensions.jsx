@@ -4,6 +4,7 @@ class Dimensions extends Component {
     state = {
         width: window.innerWidth,
         height: window.innerHeight,
+        title: document.title = `${window.innerWidth} x ${window.innerHeight}`
     }
 
     componentDidMount() {
@@ -17,8 +18,8 @@ class Dimensions extends Component {
         this.setState({
             width: window.innerWidth,
             height: window.innerHeight,
+            title: document.title = `${this.state.width} x ${this.state.height}`
         });
-        document.title = `${this.state.width} x ${this.state.height}`
     }
 
     render() {
