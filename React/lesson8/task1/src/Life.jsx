@@ -18,7 +18,7 @@ class Life extends Component {
         console.log('cleanup before DOM related to component will be removed')
     }
     render() {
-        return console.log('React element to build DOM')
+        return <div>{console.log('return React element to build DOM')}</div>
     }
 }
 
