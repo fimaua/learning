@@ -2,28 +2,21 @@ import React, { Component } from "react";
 
 class Dimensions extends Component {
     state = {
-        width: window.innerWidth,
-        height: window.innerHeight,
+        width: null,
+        height: null,
     }
 
     componentDidMount() {
         window.addEventListener('resize', this.onResize);
-        const { innerWidth, innerHeight } = window;
-        this.setDimensions(innerHeight, innerWidth);
     }
     componentWillUnmount() {
         window.removeEventListener('resize', this.onResize);
     }
 
-    onResize = e => {
-        const { innerWidth, innerHeight } = e.target;
-        this.setDimensions(innerHeight, innerWidth)
-    }
-
-    setDimensions = (width, height) => {
+    onResize = () => {
         this.setState({
-            width,
-            height,
+            width: window.innerWidth,
+            height: window.innerHeight,
         });
         document.title = `${innerWidth} x ${innerHeight}`
     }
