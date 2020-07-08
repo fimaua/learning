@@ -8,13 +8,15 @@ class Dimensions extends Component {
 
     componentDidMount() {
         window.addEventListener('resize', this.onResize);
+        const { innerWidth, innerHeight } = window;
         this.setDimensions(innerHeight, innerWidth);
     }
     componentWillUnmount() {
         window.removeEventListener('resize', this.onResize);
     }
 
-    onResize = () => {
+    onResize = e => {
+        const { innerWidth, innerHeight } = e.target;
         this.setDimensions(innerHeight, innerWidth)
     }
 
