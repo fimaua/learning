@@ -2,21 +2,19 @@ import React, { Component } from "react";
 
 class Dimensions extends Component {
     state = {
-        width: null,
-        height: null,
+        width: window.innerWidth,
+        height: window.innerHeight,
     }
 
     componentDidMount() {
         window.addEventListener('resize', this.onResize);
-        const { innerWidth, innerHeight } = window;
         this.setDimensions(innerHeight, innerWidth);
     }
     componentWillUnmount() {
         window.removeEventListener('resize', this.onResize);
     }
 
-    onResize = e => {
-        const { innerWidth, innerHeight } = e.target;
+    onResize = () => {
         this.setDimensions(innerHeight, innerWidth)
     }
 

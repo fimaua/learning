@@ -7,16 +7,16 @@ class Life extends Component {
     }
     componentDidMount() {
         console.log('componentDidMount: API calls, subscriptions')
-        console.log('shouldComponentUpdate: decide to render or not to render')
-        console.log('componentDidUpdate: some updates based on new props')
-        console.log('componentWillUnmount: cleanup before DOM related to component will be removed')
     }
     shouldComponentUpdate(nextProps, nextState) {
+        console.log('shouldComponentUpdate: decide to render or not to render')
         return true
     }
     componentDidUpdate(prevProps, prevState) {
+        console.log('componentDidUpdate: some updates based on new props')
     }
     componentWillUnmount() {
+        console.log('componentWillUnmount: cleanup before DOM related to component will be removed')
     }
     render() {
         return <div>{console.log('return React element to build DOM')}</div>
