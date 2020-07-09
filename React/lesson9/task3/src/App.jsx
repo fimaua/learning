@@ -8,7 +8,7 @@ const App = () => {
     }
 
     return (
-        <UserForm createUser={createUser} />
+        <UserForm onSubmit={createUser} />
     );
 }
 

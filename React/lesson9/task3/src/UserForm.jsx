@@ -5,11 +5,11 @@ class UserForm extends Component {
         super(props)
     }
 
-    onSubmit = (event) => {
+    onSubmit = event => {
         event.preventDefault()
         const formData = [...new FormData(this.formRef)]
             .reduce((acc, [name, value]) => ({ ...acc, [name]: value }), {})
-        this.props.createUser(formData)
+        this.props.onSubmit(formData)
     }
 
     setRef = node => {
