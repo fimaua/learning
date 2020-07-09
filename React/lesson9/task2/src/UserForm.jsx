@@ -11,7 +11,6 @@ class UserForm extends Component {
         }
     }
 
-
     handlechange = event => {
         const { name, value, checked, type } = event.target
 
@@ -26,7 +25,7 @@ class UserForm extends Component {
 
     onSubmit = event => {
         event.preventDefault()
-        this.props.createUser(event)
+        this.props.createUser(this.state)
     }
 
     render() {
