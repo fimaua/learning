@@ -1,7 +1,7 @@
 import React from "react";
 
-const ProductRow = () => {
-    const product = this.props.product;
+const ProductRow = (props) => {
+    const product = props.product;
     const name = product.stocked ?
         product.name :
         <span style={{ color: 'red' }}>

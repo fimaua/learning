@@ -1,8 +1,8 @@
 import React from "react";
 
 
-const ProductCategoryRow = () => {
-    const category = this.props.category;
+const ProductCategoryRow = (props) => {
+    const category = props.category;
     return (
         <tr>
             <th colSpan="2">
