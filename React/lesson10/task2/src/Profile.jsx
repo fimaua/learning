@@ -3,7 +3,7 @@ import UserForm from "./UserForm.jsx"
 
 const Profile = ({ userData, onChange }) => {
     return (
-        <div class="column">
+        <div className="column">
             <UserForm userData={userData} onChange={onChange} />
         </div>
     )

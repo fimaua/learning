@@ -22,11 +22,11 @@ class Page extends Component {
         const { userData } = this.state
         return (
             <div className="page">
-                <h1 className="title">{`Hello, ${userData.firstName} ${userData.lastName}`}<h1 />
-                    <main className="content">
-                        <ShoppingCart userData={userData} />
-                        <Profile userData={userData} onChange={this.onChange} />
-                    </main>
+                <h1 className="title">{`Hello, ${userData.firstName}`}</h1>
+                <main className="content">
+                    <ShoppingCart userData={userData} />
+                    <Profile userData={userData} onChange={this.onChange} />
+                </main>
             </div>
         )
     }
