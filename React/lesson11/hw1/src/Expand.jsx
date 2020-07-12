@@ -1,34 +1,25 @@
-import React, { Component } from "react";
-import UserProfile from "./UserProfile.jsx"
-import UserMenu from "./UserMenu.jsx"
+import React from 'react';
 
-class Page extends Component {
-    state = {
-        userData: null
-    }
-    componentDidMount() {
-        this.fetchUserData(this.props.userId)
-    }
-    fetchUserData = userId => {
-        const userUrl = `https://api.github.com/users/${userId}`
-        fetch(userUrl)
-            .then(response => response.json())
-            .then(userData =>
-                this.setState({
-                    userData,
-                }),
-            )
-    }
-    render() {
-        return (
-            <div className="page">
-                <header className="header">
-                    <UserMenu userData={this.state.userData} />
-                    <UserProfile userData={this.state.userData} />
-                </header>
+const Expand = ({ isOpen, children, title, onSwitch }) => {
+    const swithChildren = () => {
+        if (isOpen) {
+            return <div className="expand__content">
+                {children}
             </div>
-        )
+        }
+        return null
     }
+    return (
+        <div className="expand border">
+            <div className="expand__header">
+                <span className="expand__title">{title}</span>
+                <button className="expand__toggle-btn" onClick={onSwitch}>
+                    {isOpen ? '↑' : '↓'}
+                </button>
+            </div>
+            {swithChildren()}
+        </div>
+    )
 }
 
-export default Page;
+export default Expand;
