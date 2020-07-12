@@ -9,11 +9,11 @@ const Expand = ({ isOpen, children, title, onSwitch }) => {
                     {isOpen ? '↑' : '↓'}
                 </button>
             </div>
-            {isOpen
-                ? <div className="expand__content">
-                    {children}
-                </div>
-                : null}
+            <div className="expand__content">
+                {isOpen
+                    ? children
+                    : null}
+            </div>
         </div>
     )
 }
