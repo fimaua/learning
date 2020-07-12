@@ -6,12 +6,15 @@ const Expand = ({ isOpen, children, title, onSwitch }) => {
             <div className="expand__header">
                 <span className="expand__title">{title}</span>
                 <button className="expand__toggle-btn" onClick={onSwitch}>
-                    {!isOpen ? '↑' : '↓'}
+                    {isOpen ? '↑' : '↓'}
                 </button>
             </div>
-            <div className="expand__content" hidden={isOpen}>
-                {children}
-            </div>
+            {isOpen
+                ? <div className="expand__content">
+                    {children}
+                </div>
+                : null
+            }
         </div>
     )
 }

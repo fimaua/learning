@@ -3,7 +3,7 @@ import Expand from "./Expand.jsx"
 
 class App extends Component {
     state = {
-        isOpen: true,
+        isOpen: false,
     }
 
     handleDialog = () => {
