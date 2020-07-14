@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Task from './Task.jsx';
 import CreateTaskInput from './CreateTaskInput.jsx'
+import PropTypes from 'prop-types'
 import { createTask, fetchTasksList, updateTask, deleteTask } from './tasksGateway.js';
 
 
@@ -28,23 +29,23 @@ class TasksList extends Component {
         };
 
         createTask(newTask)
-            .then(() => fetchTasksList())
+            .then(() => this.fetchTasks())
     }
 
     handleTaskStatusChange = id => {
 
-        const { done, text } = this.state.tasks.find(task => task.id = id)
+        const { done, text } = this.state.tasks.find(task => task.id === id)
         const updatedTask = {
             text,
             done: !done,
         }
         updateTask(id, updatedTask)
-            .then(() => fetchTasksList())
+            .then(() => this.fetchTasks())
     }
 
     handleTaskDelete = id => {
         deleteTask(id)
-            .then(() => fetchTasksList())
+            .then(() => this.fetchTasks())
     }
 
     render() {
@@ -62,6 +63,12 @@ class TasksList extends Component {
             </div>
         )
     }
+}
+TasksList.propTypes = {
+    tasks: PropTypes.array,
+}
+TasksList.defaultProps = {
+    tasks: [],
 }
 
 export default TasksList;
