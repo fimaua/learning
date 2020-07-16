@@ -1,6 +1,6 @@
 import React from 'react';
 import Product from './Product.jsx'
-import { Link, Route } from "react-router-dom"
+import { Link, Route, Switch, useParams } from "react-router-dom"
 
 function Products({ match }) {
     return (
@@ -14,10 +14,12 @@ function Products({ match }) {
                     <Link to={`${match.url}/book`}>Book</Link>
                 </li>
             </ul>
-            <Route exact path="/products">
-                <span>Select a product please</span>
-            </Route>
-            <Route path={`${match.url}/:productId`} component={Product} />
+            <Switch>
+                <Route exact path={match.url}>
+                    <span>Select a product please</span>
+                </Route>
+                <Route path={`${match.url}/:productId`} component={Product} />
+            </Switch>
         </div>
     )
 }
