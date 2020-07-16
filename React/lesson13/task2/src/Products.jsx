@@ -17,7 +17,7 @@ function Products({ match }) {
             <Route exact path="/products">
                 <span>Select a product please</span>
             </Route>
-            <Route path="/products/:productId" component={Product} />
+            <Route path={`${match.url}/:productId`} component={Product} />
         </div>
     )
 }
