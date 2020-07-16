@@ -1,6 +1,6 @@
 import React from 'react';
 import Product from './Product.jsx'
-import { Link, Route, Switch, useParams } from "react-router-dom"
+import { Link, Route, Switch } from "react-router-dom"
 
 function Products({ match }) {
     return (
@@ -18,7 +18,9 @@ function Products({ match }) {
                 <Route exact path={match.url}>
                     <span>Select a product please</span>
                 </Route>
-                <Route path={`${match.url}/:productId`} component={Product} />
+                <Route path={`${match.url}/:productId`}>
+                    <Product />
+                </Route>
             </Switch>
         </div>
     )
