@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import './clock.scss'
 
 const getTimeWithOffset = offset => {
     const currentTime = new Date();
@@ -7,20 +6,25 @@ const getTimeWithOffset = offset => {
     return new Date(currentTime.setHours(currentTime.getHours() + offset + utcOffset))
 }
 
-class Counter extends Component {
+class Clock extends Component {
     constructor(props) {
-        super(props);
-
+        super(props)
         this.state = {
             location: props.location,
             offset: props.offset,
             time: getTimeWithOffset(props.offset)
         }
-        setInterval(() => {
+    }
+    componentDidMount() {
+        this.interval = setInterval(() => {
             this.setState({
                 time: getTimeWithOffset(this.state.offset)
             })
         }, 1000)
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.interval)
     }
 
     render() {
@@ -33,8 +37,8 @@ class Counter extends Component {
                     {this.state.time.toLocaleTimeString()}
                 </div>
             </div>
-        );
+        )
     }
 }
 
-export default Counter;
+export default Clock;
