@@ -1,5 +1,3 @@
-import { createStore } from 'redux'
-
 const increment = () => {
     return {
         type: 'COUNTER/INCREMENT',
@@ -20,5 +18,3 @@ const counterReducer = (store = 0, action) => {
             return store - 1;
     }
 }
-
-const store = createStore(counterReducer)
