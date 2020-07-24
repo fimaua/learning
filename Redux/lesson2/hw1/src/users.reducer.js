@@ -1,5 +1,4 @@
 import { initialState } from './store.js'
-import { deleteUser } from './users.actions.js'
 
 export const usersReducer = (state = initialState, action) => {
     switch (action.type) {
