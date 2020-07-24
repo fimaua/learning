@@ -1,18 +1,17 @@
-import { createStore } from 'redux'
 
-const increment = () => {
+export const increment = () => {
     return {
         type: 'COUNTER/INCREMENT',
     }
 }
 
-const decrement = () => {
+export const decrement = () => {
     return {
         type: 'COUNTER/DECREMENT',
     }
 }
 
-const counterReducer = (state = 0, action) => {
+export const counterReducer = (state = 0, action) => {
     switch (action.type) {
         case 'COUNTER/INCREMENT':
             return state + 1;
@@ -22,5 +21,3 @@ const counterReducer = (state = 0, action) => {
             return state
     }
 }
-
-const store = createStore(counterReducer)
