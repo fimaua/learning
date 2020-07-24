@@ -23,4 +23,4 @@ export const counterReducer = (store = 0, action) => {
     }
 }
 
-const store = createStore(counterReducer)
+export const store = createStore(counterReducer)
