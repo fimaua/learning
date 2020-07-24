@@ -1,3 +1,4 @@
+import { createStore } from 'redux'
 
 export const increment = () => {
     return {
@@ -21,3 +22,5 @@ export const counterReducer = (store = 0, action) => {
             return store
     }
 }
+
+const store = createStore(counterReducer)
