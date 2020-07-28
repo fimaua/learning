@@ -1,13 +1,11 @@
 import { lang } from './language.actions.js'
 
-const initialState = {
-    language: 'en'
-}
+const initialState = 'en'
 
 export const languageReducer = (state = initialState, action) => {
     switch (action.type) {
         case lang:
-            return state.language = action.payload.language;
+            return state = action.payload.language;
         default:
             return state
     }
