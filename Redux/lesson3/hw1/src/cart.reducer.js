@@ -1,4 +1,4 @@
-import { ADD_PRODUCT, REMOVE_PRODUCT } from './card.actions.js'
+import { ADD_PRODUCT, REMOVE_PRODUCT } from './cart.actions.js'
 
 const initialState = {
     products: [],
