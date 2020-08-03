@@ -5,7 +5,7 @@ import * as usersActions from './users.actions.js';
 import { connect } from 'react-redux';
 
 const UsersList = ({ users, goPrev, goNext }) => {
-    const { currentPage, usersList } = users
+    const { currentPage, usersList } = users.users
     const start = currentPage * 3
     const end = start + 3
     const usersOnPage = usersList.slice(start, end)
@@ -30,7 +30,7 @@ const UsersList = ({ users, goPrev, goNext }) => {
 
 const mapState = state => {
     return {
-        ...state
+        users: state
     }
 }
 
