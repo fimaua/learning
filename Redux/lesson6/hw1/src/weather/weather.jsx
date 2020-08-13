@@ -3,7 +3,8 @@ import { connect } from 'react-redux'
 import { weatherDataSelector } from './weather.selectors.js'
 import * as weatherActions from './weather.actions.js';
 
-const Weather = ({ weatherData }) => {
+const Weather = ({ weatherData, getWeatherData }) => {
+    getWeatherData
     console.log(weatherData)
     if (!weatherData) {
         return null;
@@ -13,7 +14,7 @@ const Weather = ({ weatherData }) => {
             <h1 className="weather__title">Weather data</h1>
             <ul className="cities-list">
                 {weatherData.map(city => (
-                    <li className="city">
+                    <li key={city.id} className="city">
                         <span className="city__name">{city.name}</span>
                         <span className="city__temperature">{city.temperature}</span>
                     </li>
@@ -24,7 +25,7 @@ const Weather = ({ weatherData }) => {
 }
 
 const mapDispatch = {
-    weatherData: weatherActions.getWeatherData()
+    getWeatherData: weatherActions.getWeatherData
 }
 const mapStateToProps = state => {
     return {
