@@ -4,8 +4,7 @@ import { weatherDataSelector } from './weather.selectors.js'
 import * as weatherActions from './weather.actions.js';
 
 const Weather = ({ weatherData, getWeatherData }) => {
-    getWeatherData
-    console.log(weatherData)
+    getWeatherData();
     if (!weatherData) {
         return null;
     }
